@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
+
 
 import Team1 from "../assets/img/Image 2.png";
 import Team2 from "../assets/img/Image 3.png";
@@ -79,8 +80,9 @@ const TeamComp = () =>{
         <Col>
         <img src={Team17} alt="pupuk" />
         </Col>
-
+        
      </Row>
+     <Button href="/karyawanlist">Explore</Button>
     </Container>
     </center>
     </div>
