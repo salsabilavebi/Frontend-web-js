@@ -2,7 +2,7 @@ import Karyawan from "../models/KaryawanModels.js";
 import path from "path";
 import fs from "fs";
 
-export const getKaryawan = async(req, res)=>{
+export const getKaryawans = async(req, res)=>{
 
     try {
         const response = await Karyawan.findAll();

@@ -1,39 +1,58 @@
-import React from "react";
-import { Container, Row, Col, Button, Table} from "react-bootstrap";
+import React,  { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { Card, Container, Row, Col, Button, Table} from "react-bootstrap";
 
-const KaryawanList = () =>{
+const KaryawanList = () => {
 
-    return(
-        <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td colSpan={2}>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </Table>
-    
+  const [karyawans, setKaryawans] = useState([]);
+
+  
+  useEffect(() => {
+
+      fectData();
+
+  }, []);
+
+ 
+  const fectData = async () => {
+     
+      const response = await axios.get('http://localhost:3000/api/karyawans');
+      const data = await response.data.data;
+      setKaryawans(data);
+  }
+
+  return (
+      <Container className="mt-3">
+          <Row>
+              <Col md="{12}">
+                  <Card className="border-0 rounded shadow-sm">
+                      <Card.Body>
+                          <Table striped bordered hover className="mb-1">
+                              <thead>
+                                  <tr>
+                                      <th>NO.</th>
+                                      <th>TITLE</th>
+                                      <th>CONTENT</th>
+                                      <th>AKSI</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  { karyawans.map((karyawan, index) => (
+                                      <tr key={ karyawan.id }>
+                                          <td>{ index + 1 }</td>
+                                          <td>{ karyawan.nama_kar }</td>
+                                          <td>{ karyawan.tgl_lahir }</td>
+                                          <td className="text-center"></td>
+                                      </tr>
+                                  )) }
+                              </tbody>
+                          </Table>
+                      </Card.Body>
+                  </Card>
+              </Col>
+          </Row>
+      </Container>
   );  
 };
 

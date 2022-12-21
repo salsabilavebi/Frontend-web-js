@@ -1,6 +1,6 @@
 import express from "express";
 import {
-    getKaryawan,
+    getKaryawans,
     getKaryawanById,
     saveKaryawan,
     updateKaryawan,
@@ -9,10 +9,10 @@ import {
 
 const router = express.Router();
 
-router.get('/karyawan', getKaryawan);
-router.get('/karyawan/:id', getKaryawanById);
-router.post('/karyawan', saveKaryawan);
-router.patch('/karyawan/:id', updateKaryawan);
-router.delete('/karyawan/:id', deleteKaryawan);
+router.get('/karyawans', getKaryawans);
+router.get('/karyawans/:id', getKaryawanById);
+router.post('/karyawans', saveKaryawan);
+router.patch('/karyawans/:id', updateKaryawan);
+router.delete('/karyawans/:id', deleteKaryawan);
 
 export default router;
