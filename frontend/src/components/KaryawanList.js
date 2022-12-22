@@ -18,7 +18,14 @@ const KaryawanList = () => {
     setKaryawans(response.data);
   };
 
-  
+  const deleteKaryawan = async (karyawanId) => {
+    try {
+      await axios.delete(`http://localhost:5000/karyawans/${karyawanId}`);
+      getKaryawans();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
       <Container className="mt-3">
           <Row>
@@ -45,6 +52,7 @@ const KaryawanList = () => {
                                           <td>{ karyawan.foto }</td>
                                           <td className="text-center"></td>
                                           <Button as={Link} to={`/editkaryawan/${karyawan.id}`} variant="primary" size="sm" className="me-2">EDIT</Button>
+                                          <Button  onClick={() => deleteKaryawan(karyawan.id)} variant="primary" size="sm" className="me-2">HAPUS</Button>
                                       </tr>
                                   )) }
                               </tbody>
