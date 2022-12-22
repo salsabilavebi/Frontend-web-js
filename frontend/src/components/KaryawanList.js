@@ -32,6 +32,7 @@ const KaryawanList = () => {
                                       <th>NO.</th>
                                       <th>TITLE</th>
                                       <th>CONTENT</th>
+                                      <th>FOTO</th>
                                       <th>AKSI</th>
                                   </tr>
                               </thead>
@@ -41,7 +42,9 @@ const KaryawanList = () => {
                                           <td>{ index + 1 }</td>
                                           <td>{ karyawan.nama_kar }</td>
                                           <td>{ karyawan.jabatan }</td>
+                                          <td>{ karyawan.foto }</td>
                                           <td className="text-center"></td>
+                                          <Button as={Link} to={`/editkaryawan/${karyawan.id}`} variant="primary" size="sm" className="me-2">EDIT</Button>
                                       </tr>
                                   )) }
                               </tbody>
