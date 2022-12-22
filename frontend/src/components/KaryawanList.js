@@ -1,26 +1,31 @@
 import React,  { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Card, Container, Row, Col, Button, Table} from "react-bootstrap";
+import { Card, Container, Row, Col,  Table} from "react-bootstrap";
 
 const KaryawanList = () => {
 
   const [karyawans, setKaryawans] = useState([]);
 
-  
   useEffect(() => {
-
-      fectData();
-
+    getKaryawans();
   }, []);
 
- 
-  const fectData = async () => {
-     
-      const response = await axios.get('http://localhost:3000/api/karyawans');
-      const data = await response.data.data;
-      setKaryawans(data);
-  }
+  
+
+  const getKaryawans = async () => {
+    const response = await axios.get("http://localhost:5000/karyawans");
+    setKaryawans(response.data);
+  };
+
+  const deleteKaryawan = async (karyawanId) => {
+    try {
+      await axios.delete(`http://localhost:5000/karyawans/${karyawanId}`);
+      getKaryawans();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
       <Container className="mt-3">
@@ -28,6 +33,7 @@ const KaryawanList = () => {
               <Col md="{12}">
                   <Card className="border-0 rounded shadow-sm">
                       <Card.Body>
+                      <Button as={Link} to="/addkaryawan" variant="success" className="mb-3">TAMBAH POST</Button>
                           <Table striped bordered hover className="mb-1">
                               <thead>
                                   <tr>
@@ -42,7 +48,7 @@ const KaryawanList = () => {
                                       <tr key={ karyawan.id }>
                                           <td>{ index + 1 }</td>
                                           <td>{ karyawan.nama_kar }</td>
-                                          <td>{ karyawan.tgl_lahir }</td>
+                                          <td>{ karyawan.jabatan }</td>
                                           <td className="text-center"></td>
                                       </tr>
                                   )) }
@@ -55,6 +61,7 @@ const KaryawanList = () => {
       </Container>
   );  
 };
+
 
 export default KaryawanList;
 
