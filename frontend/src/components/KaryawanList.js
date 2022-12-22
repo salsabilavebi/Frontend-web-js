@@ -1,7 +1,7 @@
 import React,  { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Card, Container, Row, Col,  Table} from "react-bootstrap";
+import { Card, Container, Row, Col,  Table, Button} from "react-bootstrap";
 
 const KaryawanList = () => {
 
@@ -18,15 +18,7 @@ const KaryawanList = () => {
     setKaryawans(response.data);
   };
 
-  const deleteKaryawan = async (karyawanId) => {
-    try {
-      await axios.delete(`http://localhost:5000/karyawans/${karyawanId}`);
-      getKaryawans();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+  
   return (
       <Container className="mt-3">
           <Row>
