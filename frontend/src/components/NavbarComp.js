@@ -45,7 +45,8 @@ const NavbarComp = () =>{
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#features">Features</Nav.Link>
               <Nav.Link href="#pricing">Pricing</Nav.Link>
-            </Nav>
+              <Nav.Link href="/karyawanlist">Admin</Nav.Link>
+            </Nav> 
           </Container>
         </Navbar>
       </div><div className="hero min-vh-100 ">
@@ -67,8 +68,8 @@ const NavbarComp = () =>{
                 <img
                   alt=""
                   src="./icon/Logo.png"
-                  width="500"
-                  height="500"
+                  width="400"
+                  height="400"
                   className="d-inline-block align-top" />
                 <Container>
                   <Button variant="danger">OUR TEAM</Button>{' '}
@@ -82,8 +83,8 @@ const NavbarComp = () =>{
                       <img
                         alt=""
                         src="./icon/fajar.png"
-                        width="200"
-                        height="200"
+                        width="100"
+                        height="100"
                         className="d-inline-block align-top" />
                       <center>
                         <h5>
@@ -103,8 +104,8 @@ const NavbarComp = () =>{
                       <img
                         alt=""
                         src="./icon/Dimas.png"
-                        width="200"
-                        height="200"
+                        width="100"
+                        height="100"
                         className="d-inline-block align-top" />
                       <center>
                         <h5>
@@ -130,8 +131,8 @@ const NavbarComp = () =>{
                       <img
                         alt=""
                         src="./icon/sidarta.png"
-                        width="200"
-                        height="200"
+                        width="100"
+                        height="100"
                         className="d-inline-block align-top" />
 
                       <center>
@@ -155,8 +156,8 @@ const NavbarComp = () =>{
                       <img
                         alt=""
                         src="./icon/Foto.png"
-                        width="200"
-                        height="200"
+                        width="100"
+                        height="100"
                         className="d-inline-block align-top" />
                       <center>
                         <h5>
@@ -185,7 +186,7 @@ const NavbarComp = () =>{
             <h1>KEGIATAN</h1>
             <p>Kunjungan kerja, Demplot, Rapat Koordinasi yang kami lakukan adalah upaya </p>
             <p>kami memperbaiki diri demi kepuasan kepada para pelanggan</p>
-            <Row className="g-4">
+            <Row className="g-2">
               <Col mt-2>
                 <img src={Gallery1} alt="pupuk" />
               </Col>
@@ -214,11 +215,11 @@ const NavbarComp = () =>{
           </Container>
         </div></><div className="Team">
           <center>
-            <Container>
+            <Container className="min-vh-100">
               <h1> OUR TEAM </h1>
               <p>Team Administrasi dan lapangan yang siap membantu 24/7 </p>
-              <Row className="team1">
-                <Col className="col">
+              <Row className="g-0">
+                <Col className="col-ml-20">
                   <img src={Team1} alt="pupuk" />
                 </Col>
                 <Col className="col-ml-2">
@@ -234,7 +235,7 @@ const NavbarComp = () =>{
                   <img src={Team5} alt="pupuk" />
                 </Col>
               </Row>
-              <Row>
+              <Row className="g-0">
                 <Col>
                   <img src={Team7} alt="pupuk" />
                 </Col>
@@ -254,8 +255,8 @@ const NavbarComp = () =>{
                   <img src={Team12} alt="pupuk" />
                 </Col>
               </Row>
-              <Row>
-                <Col>
+              <Row className="g-0">
+                <Col >
                   <img src={Team13} alt="pupuk" />
                 </Col>
                 <Col>
@@ -272,7 +273,9 @@ const NavbarComp = () =>{
                 </Col>
 
               </Row>
-              <Button href="/karyawanlist">Explore</Button>
+              <div>
+              <Button href="/admlist">Explore</Button>
+              </div>
             </Container>
           </center>
         </div></>

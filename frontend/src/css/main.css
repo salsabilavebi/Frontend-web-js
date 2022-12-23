@@ -66,6 +66,12 @@
 .avp h7{
 
     color: red;
+    font-size: 15px;
+}
+.avp h5{
+
+   
+    font-size: 15px;
 }
 
 .galery{
@@ -87,20 +93,13 @@
 
 .Team img{
 
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50px;
   
-
-
     
 }
-.Team {
 
-    position: relative;
-    
-    
-}
  
 .text-center{
     border-radius: 10px;
@@ -126,7 +125,7 @@
 .pd2{
 
     position: relative;
-    max-width: 70px;
+    max-width: 100px;
     width: 50%;
     display: inline-block;
     box-shadow: 0 4px 8px rgba(0,0,0, .5)
@@ -135,16 +134,16 @@
 .pd img{
 
     margin-left: 140px;
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
     
 }
 
 .pd2 img{
 
     margin-left: 140px;
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
    
 }
 
@@ -406,4 +405,9 @@ p, ul li, ol li {
     font-size: 13px;
     margin-bottom: 5px;
     padding-bottom: 10px;
+}
+
+.Team button{
+
+    margin-top: 20px;
 }
