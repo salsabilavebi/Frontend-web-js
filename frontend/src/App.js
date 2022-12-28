@@ -5,6 +5,7 @@ import KaryawanList from "./components/KaryawanList";
 import AddKaryawan from "./components/AddKaryawan";
 import EditKaryawan from "./components/EditKaryawan";
 import AdmComp from "./components/AdmComp";
+import Login from "./components/Login";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Route path="addkaryawan" element={<AddKaryawan/>}/>
       <Route path="editkaryawan/:id" element={<EditKaryawan/>}/>
       <Route path="admlist" element={<AdmComp/>}/>
+      <Route path="login" element={<Login/>}/>
        
       </Routes>
       </BrowserRouter>
