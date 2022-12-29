@@ -19,7 +19,6 @@ function App() {
       <Route path="editkaryawan/:id" element={<EditKaryawan/>}/>
       <Route path="admlist" element={<AdmComp/>}/>
       <Route path="login" element={<Login/>}/>
-       
       </Routes>
       </BrowserRouter>
       
