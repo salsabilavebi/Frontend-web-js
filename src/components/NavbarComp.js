@@ -33,7 +33,7 @@ const NavbarComp = () =>{
     <><><><><><><><><div className="Navbar">
         <Navbar>
           <Container>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
               <img
                 alt=""
                 src="./icon/pupuk.png"
@@ -42,9 +42,9 @@ const NavbarComp = () =>{
                 className="d-inline-block align-top" />
             </Navbar.Brand>
             <Nav className="ms-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/">Features</Nav.Link>
+              <Nav.Link href="/">Pricing</Nav.Link>
               <Nav.Link href="/karyawanlist">Admin</Nav.Link>
             </Nav> 
           </Container>
@@ -73,9 +73,9 @@ const NavbarComp = () =>{
                   className="d-inline-block align-top" />
                 <Container>
                   <Button variant="danger">OUR TEAM</Button>{' '}
-                  <Button href="#" variant="outline-dark" className="m-2">Jawa Barat</Button>
-                  <Button href="#" variant="outline-dark" className="m-2">Banten</Button>
-                  <Button href="#" variant="outline-dark" className="m-2">DKI Jakarta</Button>
+                  <Button href="/" variant="outline-dark" className="m-2">Jawa Barat</Button>
+                  <Button href="/" variant="outline-dark" className="m-2">Banten</Button>
+                  <Button href="/" variant="outline-dark" className="m-2">DKI Jakarta</Button>
                 </Container>
                 <Container>
                   <Row className="mt-5">
@@ -351,11 +351,11 @@ const NavbarComp = () =>{
                 <div className="kilimanjaro_part ">
                   <h5>Social Links</h5>
                   <ul class="kilimanjaro_social_links">
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
-                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i> Pinterest</a></li>
-                    <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i> YouTube</a></li>
-                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
+                    <li><a href="/"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                    <li><a href="/"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="/"><i class="fa fa-pinterest" aria-hidden="true"></i> Pinterest</a></li>
+                    <li><a href="/"><i class="fa fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+                    <li><a href="/"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
                   </ul>
                 </div>
               </Col>
@@ -364,13 +364,13 @@ const NavbarComp = () =>{
                 <div className="kilimanjaro_part">
                   <h5>Tags Widget</h5>
                   <ul class=" kilimanjaro_widget">
-                    <li><a href="#">Classy</a></li>
-                    <li><a href="#">Creative</a></li>
-                    <li><a href="#">One Page</a></li>
-                    <li><a href="#">Multipurpose</a></li>
-                    <li><a href="#">Minimal</a></li>
-                    <li><a href="#">Classic</a></li>
-                    <li><a href="#">Medical</a></li>
+                    <li><a href="/">Classy</a></li>
+                    <li><a href="/">Creative</a></li>
+                    <li><a href="/">One Page</a></li>
+                    <li><a href="/">Multipurpose</a></li>
+                    <li><a href="/">Minimal</a></li>
+                    <li><a href="/">Classic</a></li>
+                    <li><a href="/">Medical</a></li>
                   </ul>
                 </div>
               </Col>
