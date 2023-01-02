@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+
 
 const Login = () =>{
 
@@ -32,7 +32,7 @@ const Login = () =>{
               </button>
             </div>
             <p className="forgot-password text-right mt-2">
-              Forgot <a href="#">password?</a>
+              Forgot <a href="/">password?</a>
             </p>
           </div>
         </form>

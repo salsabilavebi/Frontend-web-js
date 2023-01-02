@@ -1,7 +1,6 @@
 import React,  { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { Card, Container, Row, Col,  Table, Button, CardGroup} from "react-bootstrap";
+import { Card,  CardGroup} from "react-bootstrap";
 
 const AdmComp = () => {
 
