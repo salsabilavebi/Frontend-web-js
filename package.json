@@ -1,7 +1,7 @@
 {
   "name": "react-web",
   "version": "0.1.0",
-  "homepage": "https://salsabilavebi.github.io/Web-js",
+  "homepage": "https://salsabilavebi.github.io/Frontend-web-js",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
