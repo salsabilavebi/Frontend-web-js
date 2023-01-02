@@ -21,7 +21,7 @@ const EditKaryawan = () => {
   
     useEffect(() => {
       getKaryawanById();
-    }, []);
+    } );
   
     const getKaryawanById = async () => {
       const response = await axios.get(`http://localhost:5000/karyawans/${id}`);
@@ -122,7 +122,7 @@ const EditKaryawan = () => {
 
                     {preview ? (
                             <figure className="image is-128x128">
-                            <img src={preview} alt="Preview Image" />
+                            <photo src ={preview} alt="Preview Image" />
                             </figure>
                         ) : (
                             ""

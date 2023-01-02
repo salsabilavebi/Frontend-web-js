@@ -103,7 +103,7 @@ const AddKaryawan = () => {
 
                     {preview ? (
                             <figure className="image is-128x128">
-                            <img src={preview} alt="Preview Image" />
+                            <image src={preview} alt="Preview Image" />
                             </figure>
                         ) : (
                             ""

@@ -1,5 +1,5 @@
 import React from "react";
-import {Navbar, Nav, Container, Row, Col, Button, Carousel } from "react-bootstrap";
+import {Navbar, Nav, Container, Row, Col, Button} from "react-bootstrap";
 import Gallery1 from "../assets/img/kg1.png";
 import Gallery2 from "../assets/img/kg2.png";
 import Gallery3 from "../assets/img/kg3.png";
