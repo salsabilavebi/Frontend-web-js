@@ -26,7 +26,12 @@ import Team16 from "../assets/img/img6.png";
 import Team17 from "../assets/img/img7.png";
 import pd1 from "../assets/img/npk.png";
 import pd2 from "../assets/img/urea.png";
-
+import pupuk from "../assets/img/pupuk.png";
+import logo from "../assets/img/Logo.png";
+import fajar from "../assets/img/fajar.png";
+import dimas from "../assets/img/Dimas.png";
+import sidarta from "../assets/img/sidarta.png";
+import dicky from "../assets/img/foto.png";
 const NavbarComp = () =>{
 
     return(
@@ -36,15 +41,15 @@ const NavbarComp = () =>{
             <Navbar.Brand href="/">
               <img
                 alt=""
-                src="./icon/pupuk.png"
+                src={pupuk}
                 width="100"
                 height="50"
                 className="d-inline-block align-top" />
             </Navbar.Brand>
             <Nav className="ms-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/">Features</Nav.Link>
-              <Nav.Link href="/">Pricing</Nav.Link>
+              <Nav.Link href="/">Tetang Kami</Nav.Link>
+              <Nav.Link href="/">Karir</Nav.Link>
+              <Nav.Link href="/">Blog</Nav.Link>
               <Nav.Link href="/karyawanlist">Admin</Nav.Link>
             </Nav> 
           </Container>
@@ -67,7 +72,7 @@ const NavbarComp = () =>{
               <Col>
                 <img
                   alt=""
-                  src="./icon/Logo.png"
+                  src={logo}
                   width="400"
                   height="400"
                   className="d-inline-block align-top" />
@@ -82,7 +87,7 @@ const NavbarComp = () =>{
                     <Col>
                       <img
                         alt=""
-                        src="./icon/fajar.png"
+                        src={fajar}
                         width="100"
                         height="100"
                         className="d-inline-block align-top" />
@@ -103,7 +108,7 @@ const NavbarComp = () =>{
                     <Col>
                       <img
                         alt=""
-                        src="./icon/Dimas.png"
+                        src={sidarta}
                         width="100"
                         height="100"
                         className="d-inline-block align-top" />
@@ -130,7 +135,7 @@ const NavbarComp = () =>{
                     <Col>
                       <img
                         alt=""
-                        src="./icon/sidarta.png"
+                        src={dimas}
                         width="100"
                         height="100"
                         className="d-inline-block align-top" />
@@ -155,7 +160,7 @@ const NavbarComp = () =>{
                     <Col>
                       <img
                         alt=""
-                        src="./icon/Foto.png"
+                        src={dicky}
                         width="100"
                         height="100"
                         className="d-inline-block align-top" />

@@ -1,6 +1,6 @@
 import React,  { useState, useEffect } from "react";
 import axios from "axios";
-import { Card,  CardGroup} from "react-bootstrap";
+import { Card,  Button} from "react-bootstrap";
 
 const AdmComp = () => {
 
@@ -19,19 +19,15 @@ const AdmComp = () => {
 
  
   return (
-    <CardGroup>
-    <Card>
-      <Card.Img variant="top" src="../s" />
-      <Card.Body>
-      { karyawans.map((karyawan) => (
+   <Card style={{ width: '18rem' }}>
+   <Card.Img variant="top" src="holder.js/100px180" />
+   <Card.Body>
+   { karyawans.map((karyawan) => (
         <><tr key={karyawan.id}></tr><><Card.Title>{ karyawan.nama_kar }</Card.Title><Card.Title>{ karyawan.no_tlp }</Card.Title></></>
         )) }
-        
-      </Card.Body>
-      
-    </Card>
-   
-  </CardGroup>
+     <Button variant="primary">Go somewhere</Button>
+   </Card.Body>
+ </Card>
   );  
 };
 
