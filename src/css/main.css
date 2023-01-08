@@ -451,3 +451,47 @@ p, ul li, ol li {
     font-weight: 600;
     color: rgb(34, 34, 34);
   }
+
+  .jabar li{
+
+    padding:10px;
+    position: absolute;
+    border:thin solid #FFF;
+    border-collapse:collapse;
+    border-color:#f9dd94;
+    background-color: #f9dd94;
+    border-radius:   2px 2em 2em;
+    
+    
+}
+ 
+.jabar ol {
+  position: relative;
+  display: block;
+  padding: .0em .4em .4em .8em;
+  margin: .6em 0 .5em 2.5em;
+  background: #D3D4DA;
+  color: #444;
+  text-decoration: none;
+  transition: all .3s ease-out;
+  border-radius:   2px 1em 1em;
+  *list-style: decimal;
+}
+
+
+
+
+.jabar li:after {
+  position: absolute;
+  content: "li";
+  border: .5em solid transparent;
+  left: -1em;
+  top: 50%;
+  margin-top: -.5em;
+  transition: all .3s ease-out;
+}
+
+.jabar ol:hover:after {
+  left: -.5em;
+  border-left-color: #f9dd94;
+}

@@ -50,7 +50,7 @@ const NavbarComp = () =>{
               <Nav.Link href="/">Tetang Kami</Nav.Link>
               <Nav.Link href="/">Karir</Nav.Link>
               <Nav.Link href="/">Blog</Nav.Link>
-              <Nav.Link href="/karyawanlist">Admin</Nav.Link>
+              <Nav.Link href="/karyawan">Admin</Nav.Link>
             </Nav> 
           </Container>
         </Navbar>
@@ -78,7 +78,7 @@ const NavbarComp = () =>{
                   className="d-inline-block align-top" />
                 <Container>
                   <Button variant="danger">OUR TEAM</Button>{' '}
-                  <Button href="/" variant="outline-dark" className="m-2">Jawa Barat</Button>
+                  <Button href="jabar" variant="outline-dark" className="m-2">Jawa Barat</Button>
                   <Button href="/" variant="outline-dark" className="m-2">Banten</Button>
                   <Button href="/" variant="outline-dark" className="m-2">DKI Jakarta</Button>
                 </Container>

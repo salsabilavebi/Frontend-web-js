@@ -1,6 +1,7 @@
 import React,  { Component } from "react";
 
-import { LoginUser } from "../features/authSlice";
+import { login } from './UserFunction';
+
 
 
 class Login extends Component {
@@ -27,7 +28,7 @@ class Login extends Component {
       password: this.state.password
     }
 
-    LoginUser(user).then(res => {
+    login(user).then(res => {
       if (res) {
         this.props.history.push('/')
       }

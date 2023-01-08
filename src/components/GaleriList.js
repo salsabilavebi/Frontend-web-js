@@ -4,9 +4,9 @@ import { Card, Container, Row, Col, Button} from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import { Link } from "react-router-dom";
 
-const KaryawanList = () => {
+const GaleriList = () => {
  
-   const [karyawans, setKaryawans] = useState([]);
+   const [galeris, setGaleris] = useState([]);
 
    
    useEffect(() => {
@@ -17,10 +17,10 @@ const KaryawanList = () => {
    
    const fectData = async () => {
       
-       const response = await axios.get('http://localhost:5000/karyawans');
+       const response = await axios.get('http://localhost:5000/galeris');
        const data = await response.data.data;
 
-       setKaryawans(data);
+       setGaleris(data);
    }
 
    return (
@@ -40,11 +40,11 @@ const KaryawanList = () => {
                                    </tr>
                                </thead>
                                <tbody>
-                                   { karyawans.map((karyawan, index) => (
-                                       <tr key={ karyawan.id }>
+                                   { galeris.map((galeri, index) => (
+                                       <tr key={ galeri.id }>
                                            <td>{ index + 1 }</td>
-                                           <td>{ karyawan.nama_kar }</td>
-                                           <td>{ karyawan.tgl_lahir }</td>
+                                           <td>{ galeri.nama_kar }</td>
+                                           <td>{ galeri.tgl_lahir }</td>
                                            <td className="text-center"></td>
                                        </tr>
                                    )) }
@@ -58,4 +58,4 @@ const KaryawanList = () => {
    );
 }
 
-export default KaryawanList;
+export default GaleriList;
