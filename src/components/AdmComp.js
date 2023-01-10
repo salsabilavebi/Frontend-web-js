@@ -1,34 +1,62 @@
-import React,  { useState, useEffect } from "react";
-import axios from "axios";
-import { Card,  Button} from "react-bootstrap";
+import React from "react";
+import { Card,  Button, Col, Row, Container} from "react-bootstrap";
 
-const AdmComp = () => {
+class AdmComp extends React.Component {
 
-  const [karyawans, setKaryawans] = useState([]);
+	// Constructor
+	constructor(karyawans) {
+		super(karyawans);
+        
+		this.state = {
+			karyawans: [],
+			DataisLoaded: false
+		};
+	}
 
-  useEffect(() => {
-    getKaryawans();
-  }, []);
+	
+	
+	componentDidMount() {
+		fetch(
+        "http://localhost:5000/karyawans")
+			.then((res) => res.json())
+			.then((json) => {
+				this.setState({
+					karyawans: json,
+					DataisLoaded: true
+				});
+			})
+	}
 
-  
+    
+	render() {
+		const { DataisLoaded, karyawans } = this.state;
+		if (!DataisLoaded) return <div>
+			<h1> Pleses wait some time.... </h1> </div> ;
 
-  const getKaryawans = async () => {
-    const response = await axios.get("http://localhost:5000/karyawans");
-    setKaryawans(response.data);
-  };
+		return (
+    
+		<Container>
+    <Row className="g-2">
+      { karyawans.map((karyawan) => (
+       
+       <Col>
+			 <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Body>
+     
+              <><tr key={karyawan.id}></tr><><Card.Title>{ karyawan.nama_kar }</Card.Title><Card.Title>{ karyawan.no_tlp }</Card.Title></></>
+              
+          <Button variant="danger"></Button>
+        </Card.Body>
+      </Card>
+      </Col>
+      )) }
+        
+    </Row>
+    </Container>
+	  );
 
- 
-  return (
-   <Card style={{ width: '18rem' }}>
-   <Card.Img variant="top" src="holder.js/100px180" />
-   <Card.Body>
-   { karyawans.map((karyawan) => (
-        <><tr key={karyawan.id}></tr><><Card.Title>{ karyawan.nama_kar }</Card.Title><Card.Title>{ karyawan.no_tlp }</Card.Title></></>
-        )) }
-     <Button variant="primary">Go somewhere</Button>
-   </Card.Body>
- </Card>
-  );  
+    };
 };
 
 

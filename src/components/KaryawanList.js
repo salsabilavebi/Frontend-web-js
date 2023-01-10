@@ -1,31 +1,44 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Card, Container, Row, Col, Button} from 'react-bootstrap';
+import React from "react";
+
+import { Card, Row, Col, Button} from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import { Link } from "react-router-dom";
 
-const KaryawanList = () => {
- 
-   const [karyawans, setKaryawans] = useState([]);
+class KaryawanList extends React.Component {
 
-   
-   useEffect(() => {
-       fectData();
+	// Constructor
+	constructor(karyawans) {
+		super(karyawans);
+        
+		this.state = {
+			karyawans: [],
+			DataisLoaded: false
+		};
+	}
 
-   }, []);
+	// ComponentDidMount is used to
+	// execute the code
+	componentDidMount() {
+		fetch(
+        "http://localhost:5000/karyawans")
+			.then((res) => res.json())
+			.then((json) => {
+				this.setState({
+					karyawans: json,
+					DataisLoaded: true
+				});
+			})
+	}
 
-   
-   const fectData = async () => {
-      
-       const response = await axios.get('http://localhost:5000/karyawans');
-       const data = await response.data.data;
+    
+	render() {
+		const { DataisLoaded, karyawans } = this.state;
+		if (!DataisLoaded) return <div>
+			<h1> Pleses wait some time.... </h1> </div> ;
 
-       setKaryawans(data);
-   }
-
-   return (
-       <Container className="mt-3">
-           <Row>
+		return (
+		<div className = "App">
+			 <Row>
                <Col md="{12}">
                    <Card className="border-0 rounded shadow-sm">
                        <Card.Body>
@@ -38,24 +51,35 @@ const KaryawanList = () => {
                                        <th>CONTENT</th>
                                        <th>AKSI</th>
                                    </tr>
-                               </thead>
-                               <tbody>
-                                   { karyawans.map((karyawan, index) => (
-                                       <tr key={ karyawan.id }>
-                                           <td>{ index + 1 }</td>
-                                           <td>{ karyawan.nama_kar }</td>
-                                           <td>{ karyawan.tgl_lahir }</td>
-                                           <td className="text-center"></td>
-                                       </tr>
-                                   )) }
-                               </tbody>
+                               </thead> 
+                <tbody>{
+				karyawans.map((karyawan) => (
+                    <tr key={ karyawan.id }>
+                    <td>1</td>
+                    <td>{ karyawan.nama_kar }</td>
+                    <td>{ karyawan.tgl_lahir }</td>
+                    <td className="text-center">
+                    <Button as={Link} to={`/EditKaryawan/${karyawan.id}`} variant="primary" size="sm" className="me-2">EDIT</Button>
+                 
+                    </td>
+                </tr>
+				))
+			}
+		
+        </tbody>
                            </Table>
                        </Card.Body>
                    </Card>
                </Col>
            </Row>
-       </Container>
-   );
+     
+       </div>
+	);
 }
+}
+
+
+                               
+  
 
 export default KaryawanList;
