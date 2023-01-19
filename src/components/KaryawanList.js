@@ -47,17 +47,17 @@ class KaryawanList extends React.Component {
                                <thead>
                                    <tr>
                                        <th>NO.</th>
-                                       <th>TITLE</th>
-                                       <th>CONTENT</th>
+                                       <th>Nama karyawan</th>
+                                       <th>Jabatan</th>
                                        <th>AKSI</th>
                                    </tr>
                                </thead> 
                 <tbody>{
-				karyawans.map((karyawan) => (
+				karyawans.map((karyawan, index) => (
                     <tr key={ karyawan.id }>
-                    <td>1</td>
+                    <td>{ index + 1 }</td>
                     <td>{ karyawan.nama_kar }</td>
-                    <td>{ karyawan.tgl_lahir }</td>
+                    <td>{ karyawan.jabatan }</td>
                     <td className="text-center">
                     <Button as={Link} to={`/EditKaryawan/${karyawan.id}`} variant="primary" size="sm" className="me-2">EDIT</Button>
                  

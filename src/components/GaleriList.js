@@ -1,61 +1,83 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Card, Container, Row, Col, Button} from 'react-bootstrap';
-import Table from 'react-bootstrap/Table';
+import React from "react";
+import { Card,   Col, Row, Table, Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const GaleriList = () => {
- 
-   const [galeris, setGaleris] = useState([]);
 
-   
-   useEffect(() => {
-       fectData();
+class GaleriList extends React.Component {
 
-   }, []);
+	// Constructor
+	constructor(galeris) {
+		super(galeris);
+        
+		this.state = {
+			galeris: [],
+			DataisLoaded: false
+		};
+	}
 
-   
-   const fectData = async () => {
-      
-       const response = await axios.get('http://localhost:5000/galeris');
-       const data = await response.data.data;
+	
+	
+	componentDidMount() {
+		fetch(
+        "http://localhost:5000/galeris")
+			.then((res) => res.json())
+			.then((json) => {
+				this.setState({
+					galeris: json,
+					DataisLoaded: true
+				});
+			})
+	}
 
-       setGaleris(data);
-   }
+    
+	render() {
+		const { DataisLoaded, galeris } = this.state;
+		if (!DataisLoaded) return <div>
+			<h1> Pleses wait some time.... </h1> </div> ;
 
-   return (
-       <Container className="mt-3">
-           <Row>
+		return (
+			<div className = "App">
+			 <Row>
                <Col md="{12}">
                    <Card className="border-0 rounded shadow-sm">
                        <Card.Body>
-                           <Button as={Link} to="/addkaryawan" variant="success" className="mb-3">TAMBAH POST</Button>
+                           <Button as={Link} to="/addgaleri" variant="success" className="mb-3">TAMBAH POST</Button>
                            <Table striped bordered hover className="mb-1">
                                <thead>
                                    <tr>
                                        <th>NO.</th>
-                                       <th>TITLE</th>
-                                       <th>CONTENT</th>
+                                       <th>Judul Kegiatan</th>
+                                       <th>Foto Kegiatan 1</th>
                                        <th>AKSI</th>
                                    </tr>
-                               </thead>
-                               <tbody>
-                                   { galeris.map((galeri, index) => (
-                                       <tr key={ galeri.id }>
-                                           <td>{ index + 1 }</td>
-                                           <td>{ galeri.nama_kar }</td>
-                                           <td>{ galeri.tgl_lahir }</td>
-                                           <td className="text-center"></td>
-                                       </tr>
-                                   )) }
-                               </tbody>
+                               </thead> 
+                <tbody>{
+				galeris.map((galeri, index) => (
+                    <tr key={ galeri.id }>
+                    <td>{ index + 1 }</td>
+                    <td>{ galeri.judul_kegiatan }</td>
+                    <td>{ galeri.foto_kegiatan1 }</td>
+                    <td className="text-center">
+                    <Button as={Link} to={`/EditGaleri/${galeri.id}`} variant="primary" size="sm" className="me-2">EDIT</Button>
+                 
+                    </td>
+                </tr>
+				))
+			}
+		
+        </tbody>
                            </Table>
                        </Card.Body>
                    </Card>
                </Col>
            </Row>
-       </Container>
-   );
-}
+     
+       </div>
+	  );
+
+    };
+};
+
 
 export default GaleriList;
+

@@ -1,16 +1,16 @@
 import React from "react";
-import { Card,  Button, Col, Row, Container, Navbar, Nav,} from "react-bootstrap";
+import { Card,   Col, Row, Container, Navbar, Nav,} from "react-bootstrap";
 import pupuk from "../assets/img/pupuk.png";
 import foto from "../assets/img/foto.png";
 
-class AdmComp extends React.Component {
+class GaleriComp extends React.Component {
 
 	// Constructor
-	constructor(karyawans) {
-		super(karyawans);
+	constructor(galeris) {
+		super(galeris);
         
 		this.state = {
-			karyawans: [],
+			galeris: [],
 			DataisLoaded: false
 		};
 	}
@@ -19,11 +19,11 @@ class AdmComp extends React.Component {
 	
 	componentDidMount() {
 		fetch(
-        "http://localhost:5000/karyawans")
+        "http://localhost:5000/galeris")
 			.then((res) => res.json())
 			.then((json) => {
 				this.setState({
-					karyawans: json,
+					galeris: json,
 					DataisLoaded: true
 				});
 			})
@@ -31,7 +31,7 @@ class AdmComp extends React.Component {
 
     
 	render() {
-		const { DataisLoaded, karyawans } = this.state;
+		const { DataisLoaded, galeris } = this.state;
 		if (!DataisLoaded) return <div>
 			<h1> Pleses wait some time.... </h1> </div> ;
 
@@ -57,16 +57,16 @@ class AdmComp extends React.Component {
 				</Navbar>
 			</div><Container>
 					<Row className="g-2">
-						{karyawans.map((karyawan) => (
+						{galeris.map((galeri) => (
 
 							<Col>
 								<Card style={{ width: '13rem' }}>
 									<Card.Img variant="top" src={foto} />
 									<Card.Body>
 
-										<><tr key={karyawan.id}></tr><><Card.Title style={{ fontSize: '15px' }}>{karyawan.nama_kar}</Card.Title></><Card.Title style={{ fontSize: '12px' }}>{karyawan.jabatan}</Card.Title></>
+										<><tr key={galeri.id}></tr><><Card.Title style={{ fontSize: '15px' }}>{galeri.judul_kegiatan}</Card.Title></></>
 
-										<Button variant="danger">{karyawan.no_tlp}</Button>
+                                        <Card.Link href="/">Selengkapnya</Card.Link>
 									</Card.Body>
 								</Card>
 							</Col>
@@ -80,5 +80,5 @@ class AdmComp extends React.Component {
 };
 
 
-export default AdmComp;
+export default GaleriComp;
 

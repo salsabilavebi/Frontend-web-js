@@ -50,7 +50,7 @@ const NavbarComp = () =>{
               <Nav.Link href="/">Tetang Kami</Nav.Link>
               <Nav.Link href="/">Karir</Nav.Link>
               <Nav.Link href="/">Blog</Nav.Link>
-              <Nav.Link href="/karyawan">Admin</Nav.Link>
+              <Nav.Link href="/dashboard">Admin</Nav.Link>
             </Nav> 
           </Container>
         </Navbar>
@@ -79,8 +79,8 @@ const NavbarComp = () =>{
                 <Container>
                   <Button variant="danger">OUR TEAM</Button>{' '}
                   <Button href="jabar" variant="outline-dark" className="m-2">Jawa Barat</Button>
-                  <Button href="/" variant="outline-dark" className="m-2">Banten</Button>
-                  <Button href="/" variant="outline-dark" className="m-2">DKI Jakarta</Button>
+                  <Button href="banten" variant="outline-dark" className="m-2">Banten</Button>
+                  <Button href="jakarta" variant="outline-dark" className="m-2">DKI Jakarta</Button>
                 </Container>
                 <Container>
                   <Row className="mt-5">
@@ -214,7 +214,7 @@ const NavbarComp = () =>{
                 <img src={Gallery8} alt="pupuk" />
               </Col>
               <Col mt-2>
-                <img src={Gallery9} alt="pupuk" />
+              <a  href="/galeri"><img class="thumbnail img-responsive" alt="Bootstrap template" src={Gallery9} /></a>
               </Col>
             </Row>
           </Container>

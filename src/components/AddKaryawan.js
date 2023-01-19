@@ -1,7 +1,7 @@
 import React,  { useState } from "react";
 import axios from "axios";
 import { Card, Container, Row, Col,  Form, Button} from "react-bootstrap";
-import {  useNavigate } from "react-router-dom";
+import {  Navigate } from "react-router-dom";
 
 const AddKaryawan = () => {
  
@@ -16,7 +16,7 @@ const AddKaryawan = () => {
         const [nomor_celana, setNomor_celana] = useState("");
         const [file, setFoto] = useState("");
         const [preview, setPreview] = useState("");
-        const navigate = useNavigate();
+      
       
         const loadImage = (e) => {
           const foto = e.target.files[0];
@@ -42,7 +42,7 @@ const AddKaryawan = () => {
             await axios.post("http://localhost:5000/karyawans", formData, {
              
             });
-            navigate("/karyawanlist");
+            <Navigate to="/karyawanlist" replace={true} />
           } catch (error) {
             console.log(error);
           }

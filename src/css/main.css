@@ -452,46 +452,122 @@ p, ul li, ol li {
     color: rgb(34, 34, 34);
   }
 
-  .jabar li{
-
-    padding:10px;
+  .jabar ol {
+    counter-reset: li; 
+    list-style: none; 
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  }
+  
+  .jabar ol a {
+    position: relative;
+    display: block;
+    padding: .0em .4em .4em .8em;
+    margin: .6em 0 .5em 2.5em;
+    background: #D3D4DA;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;
+    border-radius:   2px 1em 1em;
+    *list-style: decimal;
+  }
+  
+  .jabar ol a:hover {background: #DCDDE1;}       
+  .jabar ol a:before {
+    content: counter(li);
+    counter-increment: li;
     position: absolute;
-    border:thin solid #FFF;
-    border-collapse:collapse;
-    border-color:#f9dd94;
-    background-color: #f9dd94;
-    border-radius:   2px 2em 2em;
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #f9dd94;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
     
-    
+  }
+  
+  .jabar ol a:after {
+    position: absolute;
+    content: "";
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;
+  }
+  
+  .jabar ol a:hover:after {
+    left: -.5em;
+    border-left-color: #f9dd94;
+  }
+
+  .wrapper .sidebar{
+    background: rgb(5, 68, 104);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
 }
- 
-.jabar ol {
-  position: relative;
-  display: block;
-  padding: .0em .4em .4em .8em;
-  margin: .6em 0 .5em 2.5em;
-  background: #D3D4DA;
-  color: #444;
-  text-decoration: none;
-  transition: all .3s ease-out;
-  border-radius:   2px 1em 1em;
-  *list-style: decimal;
+
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #10558d;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
 }
 
-
-
-
-.jabar li:after {
-  position: absolute;
-  content: "li";
-  border: .5em solid transparent;
-  left: -1em;
-  top: 50%;
-  margin-top: -.5em;
-  transition: all .3s ease-out;
+.wrapper .sidebar ul li a .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
 }
 
-.jabar ol:hover:after {
-  left: -.5em;
-  border-left-color: #f9dd94;
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color: #0c7db1;
+
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
 }
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #0c7db1;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+.wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    background: rgb(7, 105, 185);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+    color: #a2ecff;
+}
+
